@@ -1,5 +1,5 @@
 // composables/useUnsplash.ts
-import { Ref, ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 interface Photo {
   id: string;
@@ -24,9 +24,8 @@ export const useUnsplash = () => {
   const totalImages = ref(0);
   const error = ref<string | null>(null);
 
-  const regularCount = 30;
+  const regularCount = 10;
 
-  // Обработка загрузки изображения
   const imageLoaded = () => {
     imagesLoaded.value++;
     if (imagesLoaded.value === totalImages.value) {

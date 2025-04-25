@@ -4,13 +4,13 @@
       class="grid grid-cols-2 items-center gap-3 bg-slate-500 rounded-3xl overflow-hidden p-5"
     >
       <el-image
+        lazy
         v-for="photo in photos"
         :key="photo.id"
         :src="photo.urls.small"
         class="rounded-3xl"
         hide-on-click-modal
         @load="imageLoaded"
-        lazy
       />
     </div>
     <div class="" v-if="isLoading">Loading...</div>
